@@ -50,6 +50,41 @@ describe LinkedList do
     expect(list.insert(1,"woo")).to eq("woo")
     expect(list.count).to eq(5)
     expect(list.head.next_node.data).to eq("woo")
+    expect(list.to_string).to eq("dop woo plop suu")
   end
 
+  it 'finds node element and returns data/additioal nodes' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.find(2,1)).to eq("shi")
+  end
+
+  it 'includes?' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.includes?('deep')).to eq(true)
+    expect(list.includes?('dep')).to eq(false)
+  end
+
+  it 'removes last node from list' do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")
+    expect(list.to_string).to eq("deep woo shi")
+  end
 end

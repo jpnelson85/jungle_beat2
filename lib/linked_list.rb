@@ -33,4 +33,20 @@ class LinkedList
     end
     count
   end
+
+  def to_string
+    string = [@head.data] 
+    if @head == nil
+      string = nil
+    elsif @head.next_node == nil
+      string.join
+    elsif 
+      current_node = @head
+      while (current_node.next_node != nil)
+        current_node = current_node.next_node
+        string << current_node.data
+      end
+    end
+    string.join(" ")
+  end
 end

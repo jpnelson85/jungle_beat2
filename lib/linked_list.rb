@@ -17,4 +17,20 @@ class LinkedList
     end
     new_data
   end
+
+  def count
+    count = 1
+    if @head == nil
+      count = 0
+    elsif @head.next_node == nil
+      count = 1
+    elsif 
+      current_node = @head
+      while (current_node.next_node != nil)
+        current_node = current_node.next_node
+        count += 1
+      end
+    end
+    count
+  end
 end

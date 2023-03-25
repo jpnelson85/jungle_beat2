@@ -16,7 +16,7 @@ describe LinkedList do
   it 'append sounds' do
     list = LinkedList.new
     list.append('doop')
-    expect(list.append).to eq('doop')
+    expect(list.head.data).to eq('doop')
   end
 
   it 'returns correct count of sounds' do
@@ -25,3 +25,4 @@ describe LinkedList do
     list.append('deep')
     expect(list.count).to eq(2)
   end
+end

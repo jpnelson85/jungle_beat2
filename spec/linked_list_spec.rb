@@ -27,7 +27,7 @@ describe LinkedList do
     list.append('doop')
     list.append('deep')
     expect(list.head.data).to eq('doop')
-    expect(list.head.next_node).to eq('deep')
+    expect(list.head.next_node).to be_an_instance_of(Node)
     expect(list.count).to eq(2)
     expect(list.to_string).to eq("doop deep") 
   end
@@ -46,14 +46,13 @@ describe LinkedList do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    list.insert(1,"woo")
     expect(list.insert(1,"woo")).to eq("woo")
-    expect(list.count).to eq(5)
+    expect(list.count).to eq(4)
     expect(list.head.next_node.data).to eq("woo")
     expect(list.to_string).to eq("dop woo plop suu")
   end
 
-  it 'finds node element and returns data/additioal nodes' do
+  it 'finds node element' do
     list = LinkedList.new
     list.append("deep")
     list.append("woo")

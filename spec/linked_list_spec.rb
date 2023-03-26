@@ -59,6 +59,7 @@ describe LinkedList do
     list.append("shi")
     list.append("shu")
     list.append("blop")
+    expect(list.count).to eq(5)
     expect(list.to_string).to eq("deep woo shi shu blop")
     expect(list.find(2,1)).to eq("shi")
   end

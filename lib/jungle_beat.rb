@@ -5,16 +5,19 @@ class JungleBeat
     @list = LinkedList.new
   end
 
-  def append(words)
-    words_string = words
-    words_arr = words_string.split(" ")
-    words_arr.each do |word|
-      list.append(word)
+  def append(data)
+    beats = data.split(' ')
+    beats.each do |beat|
+      @list.append(beat)
     end
+    beats.join(' ')
+  end
+
+  def count
+    list.count
   end
   
   def play
-    beats = self.list.node_string.chomp(" ")
-    `say -r 500 -v Boing #{beats}`
+    `say -r 500 -v Boing #{list.to_string}`
   end
 end

@@ -24,3 +24,5 @@ RSpec.describe 'JungleBeat' do
     jb.play
   end
 end
+
+
